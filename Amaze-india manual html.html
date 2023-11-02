@@ -1,0 +1,714 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Amaze-india manual</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-interactiveBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="c7546767-38f5-4d0d-8383-3ed03a79ccab" class="page sans"><header><img class="page-cover-image" src="https://cdn.jsdelivr.net/gh/shubKibees/amazonimg/banner%201.png" style="object-position:center 0%"/><h1 class="page-title">Amaze-india manual</h1><p class="page-description"></p></header><div class="page-body"><div><p id="09622ae2-1435-4acb-ab72-ad47cedcf402" class="">Welcome to the Amaze-India manual. This guide will provide you with all the necessary information to make the most of our services. It covers a range of topics, from how to navigate our website to understanding our policies and procedures. Please take some time to familiarize yourself with this manual to ensure a smooth and enjoyable experience with us.</p></div><p id="459fd4ae-f3e0-4785-9069-d5d8abe0b1f7" class="">
+</p><div><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0"><strong>Login Details</strong></summary><div class="indented"><div id="a352272d-1b38-42e2-b454-e5bef32c24a1" class="column-list"><div id="c24e59e9-4196-4f68-9f5a-1d732e76527a" style="width:43.75%" class="column"><div><p id="8f7a492e-b5d1-4fb5-97a1-b1d6239b34e4" class="">URL</p></div><p id="77f068fb-6e41-458a-b160-8b19711199cd" class="">Login</p><p id="3d6c26d5-8806-48b6-9dbe-ada74d767a73" class="">Password</p></div><div id="627a8f41-34f6-4403-ad81-8e35ef911a61" style="width:156.25%" class="column"><p id="d4b3ce20-f28d-4241-a7a0-3f87f6cfa592" class=""><a href="https://www.amaze-india.com/admin/auth/login">https://www.amaze-india.com/admin/auth/login</a></p><p id="87616c7e-693b-4202-a470-2f5f28b723c3" class="">admin</p><p id="8c42d510-52d9-45f4-bdc4-2382df982915" class="">qPSQaRwv2j</p></div></div></div></details></div><p id="ee884f9a-20bf-4582-9232-b5979c76bba3" class="">
+</p><div><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0"><strong>Technology Stack</strong></summary><div class="indented"><div id="dc667d83-20a2-4e55-9c08-47893f9fbafd" class="column-list"><div id="c3e9f8b0-139a-4f6c-85ca-3a748db44044" style="width:100%" class="column"><h3 id="41a6847b-64b6-4369-b4c2-e3ea580b887e" class=""><strong>S.no</strong></h3><p id="516dbfd6-9adb-447d-acc3-f4319fc0afb3" class="">1.</p><p id="42b66c05-5592-4c66-aba1-576bc59fe654" class="">2.</p><p id="5efde1d0-d882-46d0-ac5f-3b63a0ba4a40" class="">3.</p></div><div id="f0fee6fa-85a1-49d8-bb89-f3013efb3311" style="width:100%" class="column"><h3 id="9f23c301-47ea-45e1-9597-64fabd8f1276" class=""><strong>Technology</strong></h3><p id="dd14dc7d-0cb8-4c73-8c19-a0831f6d3579" class="">PHP</p><p id="d583b917-6ead-4214-8da6-ffbbc118b4e9" class="">Laravel</p><p id="a958e651-a2ec-4d03-bc27-a482e526d200" class="">Mysql</p></div><div id="9f739bbd-87ce-4ad5-a959-6be4c8d8267a" style="width:100%" class="column"><h3 id="58ac8870-7da0-4401-9b4f-2172fc9edfa1" class=""><strong>Version</strong></h3><p id="64f3e0d4-5af6-4474-814b-13029fad98ee" class="">7.4.3</p><p id="92dca7c3-ffff-4383-906c-caef6755ba86" class="">7</p><p id="a9078988-8034-42df-ae81-7d909cb0c7f6" class="">7.4.3</p></div></div></div></details></div><p id="bbc0cdfa-d403-42e3-9e5b-6f2b38c60db5" class="">
+</p><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">Dashboard</summary><div class="indented"><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">overview</summary><div class="indented"><p id="4be04493-618f-46fa-811a-4a47be30bb28" class="">
+</p><p id="298dae79-7060-4f89-9584-2c1a835388f6" class="">The image provided below offers a detailed view of our comprehensive dashboard. It&#x27;s designed to be user-friendly, presenting you with all the essential information at a glance.</p><p id="0aee484f-715b-42b5-8ed3-900d22ce9155" class="">
+</p><figure id="4efa3d57-5736-4342-9025-3b7767c3a0b2" class="image"><a href="https://cdn.jsdelivr.net/gh/shubKibees/amazonimg/amaz.png"><img style="width:1600px" src="https://cdn.jsdelivr.net/gh/shubKibees/amazonimg/amaz.png"/></a></figure><p id="3f7bc0e4-0ba8-42a8-a75e-602ba61dd26c" class="">
+</p></div></details></div></details><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">Admin</summary><div class="indented"><p id="b24c7ae2-f978-4347-98d1-6ab8a0f06152" class="">
+</p><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">overview</summary><div class="indented"><p id="00f55c03-9e15-4f37-b5d2-d5b5649c3ff6" class="">The admin section contains tabs for Users, Roles, Permissions, Menu, and Operations. Each tab has its respective page showing what it represents.</p><p id="e23b9929-7305-4741-9835-557bed62600c" class="">
+</p><figure id="57e98bc9-b285-4c39-9e54-0a1eb7042dba" class="image"><a href="https://cdn.jsdelivr.net/gh/shubKibees/amazonimg/admin-se.png"><img style="width:1599px" src="https://cdn.jsdelivr.net/gh/shubKibees/amazonimg/admin-se.png"/></a></figure><p id="e1365f54-9ff3-41bd-9185-13dd2151e066" class="">
+</p></div></details><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">Pages</summary><div class="indented"><p id="91589f2b-ef55-4c47-a731-ece1a9442fcf" class="">
+</p><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">overview</summary><div class="indented"><p id="cb9ae73b-fd42-462c-b416-77cfb1bab5d1" class="">When you interact with the page tab on the website by clicking it, a comprehensive list of all the pages that are currently available on the website will be displayed for you.</p><p id="99faeebf-66c5-491b-9553-d33934f09f2a" class="">
+</p><figure id="a20e056c-a28d-4886-9921-1f7a4c28971a" class="image"><a href="https://cdn.jsdelivr.net/gh/shubKibees/amazonimg/Untitled.png"><img style="width:1599px" src="https://cdn.jsdelivr.net/gh/shubKibees/amazonimg/Untitled.png"/></a></figure></div></details></div></details><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">Banners</summary><div class="indented"><p id="feca85b8-fa84-4cb9-a07d-22bc2718438f" class="">
+</p><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">overview</summary><div class="indented"><p id="957778bf-fbef-41b1-8890-6d2a8980ed88" class="">When you proceed to the &#x27;Banners&#x27; tab, you will be able to view an extensive list of all the banners that are currently displayed on the website.  In addition to this, you&#x27;ll find an &#x27;Action&#x27; tab. This particular feature provides you with the ability to make modifications to these banners. Whether you want to change the content, edit the design, or completely overhaul a banner, the &#x27;Action&#x27; tab offers you the flexibility and control to do so.</p><p id="3d021d6b-6d2b-4520-984e-7e93917cfddf" class="">
+</p><ul id="e9a07e71-519d-495c-9db5-e9c4f2ea6b12" class="bulleted-list"><li style="list-style-type:disc"><strong>for Edit </strong>   :   <mark class="highlight-orange">Action </mark>—&gt; <mark class="highlight-teal">Edit</mark></li></ul><ul id="8cb86013-9925-4b3e-9038-dbba075d7db1" class="bulleted-list"><li style="list-style-type:disc"><strong>for View</strong>   :  <mark class="highlight-orange">Action </mark>—&gt; <mark class="highlight-teal">Show</mark></li></ul><ul id="61d379e7-7d1b-4799-92e3-38065cfa7085" class="bulleted-list"><li style="list-style-type:disc"><strong>for Delete</strong>:   <mark class="highlight-orange">Action </mark>—&gt; <mark class="highlight-teal">Delete</mark></li></ul><p id="5c7e20ef-5ef0-4cc9-8d85-c937de176b62" class="">
+</p><figure id="2f270592-e0f4-41e2-ba8b-70dd3199513a" class="image"><a href="https://cdn.jsdelivr.net/gh/shubKibees/amazonimg/banner.png"><img style="width:1580px" src="https://cdn.jsdelivr.net/gh/shubKibees/amazonimg/banner.png"/></a></figure><p id="4a7f1ab0-7e9a-4f75-b6f0-86aa3ee475b6" class="">
+</p></div></details></div></details><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">Product</summary><div class="indented"><p id="0eafa278-5ef6-4bee-a9d3-fcb193830a41" class="">
+</p><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">overview</summary><div class="indented"><p id="36551ed1-a6fe-4770-9cc2-9b679a0304e8" class="">
+</p><p id="bd1af90c-aac3-40e3-afdb-d459f83d9e16" class="">The Product tab on our website is crucial for navigating through our diverse product offerings. This tab is thoughtfully divided into two main sections: the Product Category and the Product List.
+</p><figure id="7587f08a-7c16-47aa-86ba-b781ba9436ea" class="image" style="text-align:center"><a href="https://cdn.jsdelivr.net/gh/shubKibees/amazonimg/product_ls.png"><img style="width:289px" src="https://cdn.jsdelivr.net/gh/shubKibees/amazonimg/product_ls.png"/></a></figure><p id="feab80e4-7d72-45f7-8033-1919ede516af" class="">
+</p><p id="a67f723b-fc4d-43df-b4a6-f320b2b02c64" class="">The Product Category section is designed to help you quickly identify and navigate through the different categories of products available. It presents a comprehensive list of all product categories. This allows you to easily find and select the category that you are interested in, making your shopping experience streamlined and efficient.</p><p id="8369f128-7d2d-4ab2-bc4f-fc9dddaa2846" class="">On the other hand, the Product List section provides a detailed view of all the products available within each category.</p><p id="67f9e18a-c4a4-4f6c-ba32-0102462707ae" class="">
+</p><figure id="9344d53a-060b-4227-94f2-e0840e3672b5" class="image"><a href="https://cdn.jsdelivr.net/gh/shubKibees/amazonimg/product.png"><img style="width:1582px" src="https://cdn.jsdelivr.net/gh/shubKibees/amazonimg/product.png"/></a></figure><p id="c2c92159-4172-4156-bcc4-52de6659c85a" class="">
+</p></div></details></div></details><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">Media (Blog)</summary><div class="indented"><p id="0f7e7714-7a3b-46ac-83ee-6f037b7375ce" class="">
+</p><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">overview</summary><div class="indented"><p id="293b0800-0791-4f1c-abba-8ef45f2cdde3" class="">
+</p><p id="4896dbfb-c324-45da-807a-0c548360bccb" class="">The media(blog) section will provide you with a comprehensive list of all blogs that have been published on the website. Each listed blog comes with an accompanying &#x27;action&#x27; tab. This tab is a practical tool that allows you to perform various tasks related to the management of the blog posts. You can use it to edit the content of the blog if updates or corrections are necessary. The &#x27;show&#x27; option lets you view the blog as it appears on the website, which is useful for checking the final layout before it is viewed by the public. Lastly, the &#x27;delete&#x27; function is available if you decide that a particular blog post should be removed from the website.</p><p id="549fbd2f-e3bc-46ef-bdf1-240d70021b37" class="">
+</p><ul id="a4dea017-e424-411a-96c4-44d39ae9415d" class="bulleted-list"><li style="list-style-type:disc"><strong>for Edit </strong>   :   <mark class="highlight-orange">Action </mark>—&gt; <mark class="highlight-teal">Edit</mark></li></ul><ul id="f96b4e16-b19b-49a3-aa70-c112334e9a0f" class="bulleted-list"><li style="list-style-type:disc"><strong>for View</strong>   :  <mark class="highlight-orange">Action </mark>—&gt; <mark class="highlight-teal">Show</mark></li></ul><ul id="dda23656-2f6a-44f5-abc7-8ab016b2c24e" class="bulleted-list"><li style="list-style-type:disc"><strong>for Delete</strong>:   <mark class="highlight-orange">Action </mark>—&gt; <mark class="highlight-teal">Delete</mark></li></ul><p id="4e49bd1d-04b7-404f-b595-5283d207bb30" class="">
+</p><figure id="cd47aeb2-08eb-45aa-b62c-2b4fa6a06934" class="image"><a href="https://cdn.jsdelivr.net/gh/shubKibees/amazonimg/Untitled%201.png"><img style="width:1572px" src="https://cdn.jsdelivr.net/gh/shubKibees/amazonimg/Untitled%201.png"/></a></figure><p id="01e8ebda-5ffc-47de-87bb-e99f28e5a0e6" class="">
+</p></div></details></div></details><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">Partners</summary><div class="indented"><p id="5d7a34f4-7f1a-42d6-9a8a-9dda45e3f9d9" class="">
+</p><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">overview</summary><div class="indented"><p id="3a95d6d9-5735-44c3-b7af-ff780c98dffb" class="">
+</p><p id="25aee418-b2cf-4313-84be-c1a4a5cfe8c7" class="">The &quot;Partners&quot; tab, a feature on our admin, plays a crucial role in managing our partnerships. Once accessed, this tab will exhibit a comprehensive list of all our partners who have registered on the website.</p><p id="4ff126be-032f-46e5-893e-71d9bd3e2070" class="">In addition to displaying the registered partners, the &quot;Partners&quot; tab also provides admittance to a list in the administrative section of the website. </p><p id="1425a387-84a2-47bd-8ea2-7a9e6d51250b" class="">you can also edit the partners
+</p><ul id="59f875c8-df9b-41af-9213-11523289f63b" class="bulleted-list"><li style="list-style-type:disc"><strong>for Edit </strong>   :   <mark class="highlight-orange">Action </mark>—&gt; <mark class="highlight-teal">Edit</mark></li></ul><ul id="2f615398-e94a-400d-922f-b5e353ac04df" class="bulleted-list"><li style="list-style-type:disc"><strong>for View</strong>   :  <mark class="highlight-orange">Action </mark>—&gt; <mark class="highlight-teal">Show</mark></li></ul><ul id="2aace955-ac2b-4cef-97e7-c69d8b8c381b" class="bulleted-list"><li style="list-style-type:disc"><strong>for Delete</strong>:   <mark class="highlight-orange">Action </mark>—&gt; <mark class="highlight-teal">Delete</mark></li></ul><p id="b0e9b657-3cd8-469d-8178-77be4d088d61" class="">
+</p><figure id="7b117fda-4c96-4f42-9366-4b5a4e44b902" class="image"><a href="https://cdn.jsdelivr.net/gh/shubKibees/amazonimg/partner.png"><img style="width:1565px" src="https://cdn.jsdelivr.net/gh/shubKibees/amazonimg/partner.png"/></a></figure><p id="32b883c6-7e58-46f2-960d-ec127eb4a302" class="">
+</p></div></details></div></details><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">Form Data</summary><div class="indented"><p id="939be5e4-9d1b-4724-a5a6-c14afd56b7d9" class="">
+</p><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">overview</summary><div class="indented"><p id="38b742ad-2d8c-421e-877a-1527a7ceb9ad" class="">
+</p><p id="17260af5-54c5-4b43-801d-c1de0079c9b3" class="">The data collected from the form on the website provides comprehensive details about the individuals who filled out the enquiry form. These details include, but are not limited to, the person&#x27;s name, their contact phone number, their email address, and other relevant information.</p><p id="5f2db4bd-1cbf-4d89-992d-7ac499a57ca1" class="">
+</p><figure id="33eeae39-55fc-4795-9c7c-9f7c2e39eb6d" class="image"><a href="https://cdn.jsdelivr.net/gh/shubKibees/amazonimg/form_data.png"><img style="width:1574px" src="https://cdn.jsdelivr.net/gh/shubKibees/amazonimg/form_data.png"/></a></figure><p id="46b0c042-8a7d-4fd8-b9ff-9c8f59288b95" class="">
+</p><p id="0715208d-06fd-45c7-b413-798de608a69f" class="">
+</p></div></details></div></details><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">Settings</summary><div class="indented"><p id="05705443-1c44-410c-a15d-4a5711d6a03b" class="">
+</p><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0">overview</summary><div class="indented"><p id="dca09478-e698-407d-97c1-6132f1380ef6" class="">From the settings panel, you are given the ability to modify the contact information that is displayed on the website. This includes not only the primary contact details, but also the links to various social media platforms. These social media links are represented by their respective icons, and by clicking on these icons, users can directly access your social media profiles.</p><p id="4d21d6fe-a62c-4a50-8ed0-d7075751515b" class="">
+</p><figure id="26612433-dbb2-40ce-8da6-95817890eab4" class="image"><a href="https://cdn.jsdelivr.net/gh/shubKibees/amazonimg/setting.png"><img style="width:1597px" src="https://cdn.jsdelivr.net/gh/shubKibees/amazonimg/setting.png"/></a></figure></div></details></div></details></div></details></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
